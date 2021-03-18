@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import HashTutorial from '../src/Components/HashTutorial/HashTutorial';
 import Resolvve from '../src/Components/Resolvve/Resolvve';
 import Home from '../src/Components/Home/Home';
+import NavigationBar from '../src/Components/NavigationBar/NavigationBar';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -13,6 +14,9 @@ class App extends Component {
   render() {
       return (
         <div className="App">
+          <div className="NavWrapper">
+          <NavigationBar/>
+          </div>
           <Switch>                 
              <Route path='/Hash' component={HashTutorial}/>               
              <Route path='/Resolvve' component={Resolvve}/>  

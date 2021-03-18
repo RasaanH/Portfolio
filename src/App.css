@@ -31,6 +31,10 @@
   min-height: 100vh;
 }
 
+.NavWrapper {
+  height: 56px;
+}
+
 .App-link {
   color: #61dafb;
 }
