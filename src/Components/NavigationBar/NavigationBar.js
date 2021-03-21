@@ -13,7 +13,7 @@ const NavigationBar = props => {
         <div>
             <Navbar collapseOnSelect fixed='top' expand='sm' expanded={navOpen} bg='dark' variant='dark'>
                 <Container>
-                    <Navbar.Brand as={Link} to="/">Rasaan Hollis</Navbar.Brand>
+                    <Navbar.Brand onClick={() => {setNavOpen(false)}} as={Link} to="/">Rasaan Hollis</Navbar.Brand>
                     <Navbar.Toggle onClick={toggOpen} aria-controls='responsive-navbar-nav' />
                     <Navbar.Collapse id='responsive-navbar-nav'>
                         <Nav>

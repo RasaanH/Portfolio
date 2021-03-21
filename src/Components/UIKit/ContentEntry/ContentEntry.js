@@ -17,8 +17,12 @@ class ContentEntry extends Component {
     render() {
       
       return (
-        <div>
-            In the ContentEntry
+        <div className={classes.container}>
+            <div className={classes.window}>
+              <img className={classes.image} src={this.props.image} alt={`image for ${this.props.headerText}`} />
+            </div>
+            <div className={classes.headerText}>{this.props.headerText}</div>
+            <p className={classes.bodyText}>{this.props.bodyText}</p>
         </div>
       );
     }
