@@ -1,21 +1,25 @@
 import React, {useState, useEffect} from "react";
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import classes from './NavigationBar.module.css';
 
-
-
 const NavigationBar = props => {
+    const [navOpen, setNavOpen] = useState(false);
+    const toggOpen = () => {
+        let bool = navOpen;
+        setNavOpen(!bool);
+    }
     return (
         <div>
-            <Navbar collapseOnSelect fixed='top' expand='sm' bg='dark' variant='dark'>
+            <Navbar collapseOnSelect fixed='top' expand='sm' expanded={navOpen} bg='dark' variant='dark'>
                 <Container>
-                    <Navbar.Brand href="/">Rasaan Hollis</Navbar.Brand>
-                    <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+                    <Navbar.Brand as={Link} to="/">Rasaan Hollis</Navbar.Brand>
+                    <Navbar.Toggle onClick={toggOpen} aria-controls='responsive-navbar-nav' />
                     <Navbar.Collapse id='responsive-navbar-nav'>
                         <Nav>
-                            <Nav.Link href='/'>Home</Nav.Link>
-                            <Nav.Link href='/Resolvve'>Resolvve</Nav.Link>
-                            <Nav.Link href='/Hash'>Visual HashMap</Nav.Link>
+                            <Nav.Link as={Link} onClick={toggOpen} to='/'>Home</Nav.Link>
+                            <Nav.Link as={Link} onClick={toggOpen} to='/Resolvve'>Resolvve</Nav.Link>
+                            <Nav.Link as={Link} onClick={toggOpen} to='/Hash'>Visual HashMap</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

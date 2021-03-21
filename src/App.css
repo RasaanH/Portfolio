@@ -32,7 +32,10 @@
 }
 
 .NavWrapper {
-  height: 56px;
+  height: 58px;
+  border-color: forestgreen;
+  border-style: solid;
+  border-width: 2px;
 }
 
 .App-link {
