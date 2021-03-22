@@ -17,6 +17,11 @@ class App extends Component {
     this.db = firebase.firestore();
   }
 
+  /**
+   * Potential ToDos:
+   *  - Consider adding external github link in navbar
+   */
+
   componentDidMount() {
     this.db.collection('contentHome').get()
     .then(snaps => {
