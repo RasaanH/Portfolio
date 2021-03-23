@@ -1,0 +1,15 @@
+.container {
+    border-style: solid;
+    border-width: 2px;
+    width: 25px;
+    height: 25px;
+    border-color: lightgray;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+.numWrapper {
+    display: flex;
+    font-size: 12px;
+    margin: 5px;
+}

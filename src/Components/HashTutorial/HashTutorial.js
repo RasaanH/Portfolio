@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import HashLogic from './HashContainer/HashLogic'
 import classes from './HashTutorial.module.css';
 import SectionIntro from '../UIKit/SectionIntro/SectionIntro';
 
@@ -18,6 +19,7 @@ class HashTutorial extends Component {
                 headerText={sectionHeaderText}
                 bodyText={sectionBodyText}
             />
+            <HashLogic />
         </div>
       );
     }
