@@ -1,8 +1,8 @@
 .container {
     border-style: solid;
-    border-width: 2px;
-    width: 25px;
-    height: 25px;
+    border-width: 1px;
+    width: 8px;
+    height: 8px;
     border-color: lightgray;
     margin: 5px;
     border-radius: 3px;

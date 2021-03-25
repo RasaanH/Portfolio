@@ -17,9 +17,9 @@ const NavigationBar = props => {
                     <Navbar.Toggle onClick={toggOpen} aria-controls='responsive-navbar-nav' />
                     <Navbar.Collapse id='responsive-navbar-nav'>
                         <Nav>
-                            <Nav.Link as={Link} onClick={toggOpen} to='/'>Home</Nav.Link>
-                            <Nav.Link as={Link} onClick={toggOpen} to='/Resolvve'>Resolvve</Nav.Link>
-                            <Nav.Link as={Link} onClick={toggOpen} to='/Hash'>Visual HashMap</Nav.Link>
+                            <Nav.Link className={classes.link} as={Link} onClick={toggOpen} to='/'>Home</Nav.Link>
+                            <Nav.Link className={classes.link} as={Link} onClick={toggOpen} to='/Resolvve'>Resolvve</Nav.Link>
+                            <Nav.Link className={classes.link} as={Link} onClick={toggOpen} to='/Hash'>Visual HashMap</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

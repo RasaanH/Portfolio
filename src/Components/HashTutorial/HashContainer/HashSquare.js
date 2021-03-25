@@ -11,10 +11,10 @@ const HashSquare = props => {
                 return "cyan"
                 break;
             case ("multiple"):
-                return "mediumpurple"
+                return "salmon"
                 break;
             default:
-                return "red" //should never happen
+                return "white" //should never happen
                 break;
         }
     }
