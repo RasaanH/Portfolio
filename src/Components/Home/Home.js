@@ -7,7 +7,7 @@ const Home = props => {
     //console.log("props.content", props.content);
     let sectionHeaderText = `Welcome!`
     let sectionBodyText = `
-    Hi, thanks for taking the time to check out my portfolio! Please take a look around. This section
+    Hi, thanks for taking the time to check out my portfolio! I built it from scratch with React.JS and Google's Firestore. This section
     will help you get to know more about me. 
     `
     const entryJSX = !props.content ? <div>No Content Available, Try again later</div> : props.content.map((item, index) => {

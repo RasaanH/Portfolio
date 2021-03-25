@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import HashTutorial from '../src/Components/HashTutorial/HashTutorial';
 import Resolvve from '../src/Components/Resolvve/Resolvve';
 import Home from '../src/Components/Home/Home';
+import GitHub from '../src/Components/GitHub/GitHub';
 import NavigationBar from '../src/Components/NavigationBar/NavigationBar';
 import firebase from './firebaseConfig';
 import { Route, Switch } from 'react-router-dom';
@@ -84,7 +85,8 @@ class App extends Component {
           <Switch>                 
              <Route path='/Hash' render={() => <HashTutorial content={this.state.contentArrHash} />}/>               
              <Route path='/Resolvve' render={() => <Resolvve content={this.state.contentArrResolvve} />}/>  
-             <Route path='/' render={() => <Home content={this.state.contentArrHome} />}/>             
+             <Route path='/GitHub' render={() => <GitHub />}/>  
+             <Route path='/' render={() => <Home content={this.state.contentArrHome} />}/>            
           </Switch>
         </div>
       );
