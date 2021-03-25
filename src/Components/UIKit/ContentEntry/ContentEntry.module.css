@@ -1,8 +1,10 @@
 .image {
     border-radius: 50%;
     height: 150px;
+    width: 150px;
+    object-fit: cover;
     border-style: solid;
-    border-width: 4px;
+    border-width: 2px;
     image-rendering: -webkit-optimize-contrast;
     border-color: white;
 }
@@ -43,7 +45,7 @@
 
 .bodyText {
     font-family: monospace;
-    font-size: 1.3em;
+    font-size: 1.2em;
     text-align: left;
 }
 

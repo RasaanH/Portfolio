@@ -9,9 +9,14 @@ const NavigationBar = props => {
         let bool = navOpen;
         setNavOpen(!bool);
     }
+    let styleObj = {
+        borderBottomStyle: "solid",
+        borderBottomColor: "forestgreen",
+        borderBottomWidth: "2px"
+    }
     return (
         <div>
-            <Navbar collapseOnSelect fixed='top' expand='sm' expanded={navOpen} bg='dark' variant='dark'>
+            <Navbar style={styleObj} collapseOnSelect fixed='top' expand='sm' expanded={navOpen} bg='dark' variant='dark'>
                 <Container>
                     <Navbar.Brand onClick={() => {setNavOpen(false)}} as={Link} to="/">Rasaan Hollis</Navbar.Brand>
                     <Navbar.Toggle onClick={toggOpen} aria-controls='responsive-navbar-nav' />
