@@ -1,9 +1,39 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import classes from './NoteInScaleWindow.module.css';
+import { pickAtRandomFromArray } from "../../../Utils/pickAtRandomFromArray";
 
-export const NoteInScaleWindow = ({notes}) => {
+export const NoteInScaleWindow = ({notes, milliseconds, running}) => {
     const [{ scale, form }, setCurrentScale] = useState({scale: 'C', form: 'Maj'});
     const [currentNote, setCurrentNote] = useState(1);
+    const intervalIdRef = useRef();
+    const availableNumbers = [1,2,3,4,5,6,7];
+
+    useEffect(() => {
+        if (running === true) {
+            const intervalId = startExercise();
+            console.log({intervalId});
+            intervalIdRef.current = intervalId;
+            return;
+        };
+        if (running === false) {
+            clearInterval(intervalIdRef.current);
+        }
+    }, [running]);
+
+    const startExercise = () => 
+        setInterval(() => {
+            updateCurrentScale();
+        },  milliseconds
+        )
+    
+
+    const updateCurrentScale = () => {
+        const nextScale = pickAtRandomFromArray(notes);
+        const nextNumber = pickAtRandomFromArray(availableNumbers);
+        const nextForm = Math.random() > 0.5 ? 'Min' : 'Maj'
+        setCurrentScale({scale: nextScale, form: nextForm});
+        setCurrentNote(nextNumber);
+    }
     
     return (
         <div className={classes.wrapper}>

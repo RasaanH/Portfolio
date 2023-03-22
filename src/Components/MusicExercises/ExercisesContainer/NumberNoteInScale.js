@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import classes from './HashLogic.module.css';
+import classes from './NumberNoteInScale.module.css';
 import {Form, Button} from 'react-bootstrap';
 import { NoteInScaleWindow } from './NoteInScaleWindow';
+import { transformBPMToMS } from "../../../Utils/transformBPMToMS";
 
 class HashLogic extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        bpm: 40,
+        bpm: 25,
+        running: false,
         holdingArray: new Array(23),
         numItems: 0,
         keys: [],
@@ -28,6 +30,10 @@ class HashLogic extends Component {
         return;
       }
         this.setState({[name]: value});
+    }
+
+    toggleRunning() {
+      this.setState({running: !this.state.running})
     }
 
     searchName(key) {
@@ -59,11 +65,12 @@ class HashLogic extends Component {
     }
 
     render() {
+      const milliseconds = transformBPMToMS(this.state.bpm);
       return (
         <div className={classes.umbrella}>
           <div className={classes.hashGroup}>
             <div className={classes.container}>
-              <NoteInScaleWindow notes={this.scales} />
+              <NoteInScaleWindow notes={this.scales} milliseconds={milliseconds} running={this.state.running} />
             </div>
           </div>
         <div>
@@ -84,10 +91,10 @@ class HashLogic extends Component {
             <Button 
               bsPrefix={`${classes.customButton} btn`} 
               disabled={false} 
-              onClick={(e) => { e.preventDefault(); console.log('clicked');}} 
+              onClick={(e) => { e.preventDefault(); this.toggleRunning();}} 
               type='submit' 
               variant="success">
-              Start / Stop
+              {!this.state.running ? 'Start' : 'Stop'}
             </Button>
         </div>
       </div>
