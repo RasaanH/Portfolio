@@ -98,7 +98,7 @@ class NumberNoteInScale extends Component {
               bsPrefix={`${classes.customButton} btn`} 
               style={{marginTop: '10px'}}
               disabled={false} 
-              onClick={(e) => { e.preventDefault(); this.toggleRunning();}} 
+              onClick={(e) => { e.preventDefault(); this.toggleRunning(); this.setNewBPM()}} 
               type='submit' 
               variant="success">
               {!this.state.running ? 'Start' : 'Stop'}
