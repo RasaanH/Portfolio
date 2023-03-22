@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+};
+
+.largeFont {
+    font-size: 100px;  
+};
+
+.smallFont {
+    font-size: 40px;
+};

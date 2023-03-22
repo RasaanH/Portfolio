@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.umbrella {
+    font-size: 1.3em;
+    max-width: 400px;
+    min-width: 300px;
+    width: 60%;
+}
+
+.hashGroup {
+    font-size: 0.8em;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: forestgreen;
+    padding: 5px;
+}
+
+.customButton {
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.keyParent {
+    text-align: justify;
+}
+
+.legendSquare {
+    border-style: solid;
+    border-width: 1px;
+    width: 8px;
+    height: 8px;
+    border-color: lightgray;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+.legendContainer {
+    display: flex;
+    justify-content: space-evenly;
+    /* border-bottom-style: solid; */
+    border-bottom-width: 1px;
+    background-color: forestgreen;
+    border-radius: 2px;
+    margin-top: 3px;
+}

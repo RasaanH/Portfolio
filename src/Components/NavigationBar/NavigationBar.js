@@ -25,6 +25,7 @@ const NavigationBar = props => {
                             <Nav.Link className={classes.link} as={Link} onClick={toggOpen} to='/'>Home</Nav.Link>
                             <Nav.Link className={classes.link} as={Link} onClick={toggOpen} to='/Resolvve'>Resolvve</Nav.Link>
                             <Nav.Link className={classes.link} as={Link} onClick={toggOpen} to='/Hash'>Visual HashMap</Nav.Link>
+                            <Nav.Link className={classes.link} as={Link} onClick={toggOpen} to='/MusicExercises'>Music Exercises</Nav.Link>
                             <Nav.Link className={classes.link} as={Link} onClick={toggOpen} to='/GitHub'>GitHub & Links</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
 import HashTutorial from '../src/Components/HashTutorial/HashTutorial';
+import MusicExercises from './Components/MusicExercises/MusicExercises';
 import Resolvve from '../src/Components/Resolvve/Resolvve';
 import Home from '../src/Components/Home/Home';
 import GitHub from '../src/Components/GitHub/GitHub';
@@ -83,7 +84,8 @@ class App extends Component {
           <NavigationBar/>
           </div>
           <Switch>                 
-             <Route path='/Hash' render={() => <HashTutorial content={this.state.contentArrHash} />}/>               
+             <Route path='/Hash' render={() => <HashTutorial content={this.state.contentArrHash} />}/>  
+             <Route path='/MusicExercises' render={() => <MusicExercises />}/>               
              <Route path='/Resolvve' render={() => <Resolvve content={this.state.contentArrResolvve} />}/>  
              <Route path='/GitHub' render={() => <GitHub />}/>  
              <Route path='/' render={() => <Home content={this.state.contentArrHome} />}/>            
