@@ -1,12 +1,18 @@
 import React, {useState, useEffect, useRef} from "react";
 import classes from './NoteInScaleWindow.module.css';
 import { pickAtRandomFromArray } from "../../../Utils/pickAtRandomFromArray";
+import metronomeBeat from '../../../audio/metronome-85688.mp3';
+import drumBeat from '../../../audio/drumsticks-pro-mark-la-special-2bn-hickory-no4-103712.mp3'
 
 export const NoteInScaleWindow = ({notes, milliseconds, running}) => {
     const [{ scale, form }, setCurrentScale] = useState({scale: 'C', form: 'Maj'});
     const [currentNote, setCurrentNote] = useState(1);
     const intervalIdRef = useRef();
     const availableNumbers = [1,2,3,4,5,6,7];
+    const oneBeat = new Audio(metronomeBeat);
+    const otherBeats = new Audio(drumBeat);
+
+    const beatRef = useRef(1);
 
     useEffect(() => {
         clearInterval(intervalIdRef.current);
@@ -18,8 +24,24 @@ export const NoteInScaleWindow = ({notes, milliseconds, running}) => {
         };
     }, [running, milliseconds]);
 
+    const updateBeat = () => {
+        if (beatRef.current === 1) {
+            oneBeat.play();
+        } else{
+            otherBeats.play();
+        }
+        console.log('oldBeat', beatRef.current)
+        if (beatRef.current === 4) {
+            beatRef.current = 1;
+            return;
+        }
+        return beatRef.current = beatRef.current + 1
+        
+    }
+
     const startExercise = () => 
         setInterval(() => {
+            updateBeat();
             updateCurrentScale();
         },  milliseconds
         )
