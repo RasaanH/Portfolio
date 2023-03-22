@@ -56,10 +56,10 @@ export const NoteInScaleWindow = ({notes, milliseconds, running}) => {
     return (
         <div className={classes.wrapper}>
             <div style={{marginRight: '10px'}}>
-                <span style={{fontSize: '120px', marginRight: '3px'}}>{scale}</span>
-                <span style={{fontSize: '45px'}}>{form}</span>
+                <span className={classes.largeFont} style={{marginRight: '3px'}}>{scale}</span>
+                <span className={classes.smallFont}>{form}</span>
             </div>
-            <div style={{fontSize: '120px'}}>
+            <div className={classes.largeFont}>
                 {currentNote}
             </div>
         </div>
