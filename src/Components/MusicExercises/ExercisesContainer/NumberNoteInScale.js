@@ -4,19 +4,13 @@ import {Form, Button} from 'react-bootstrap';
 import { NoteInScaleWindow } from './NoteInScaleWindow';
 import { transformBPMToMS } from "../../../Utils/transformBPMToMS";
 
-class HashLogic extends Component {
+class NumberNoteInScale extends Component {
     constructor(props) {
       super(props);
       this.state = {
+        bpmField: 25,
         bpm: 25,
         running: false,
-        holdingArray: new Array(23),
-        numItems: 0,
-        keys: [],
-        nameSearch: "",
-        nameAdd: "",
-        favoriteFoodAdd: "",
-        searchResult: ""
       }
       this.scales = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
       this.change = this.change.bind(this); //Fixes context of 'this'
@@ -34,6 +28,18 @@ class HashLogic extends Component {
 
     toggleRunning() {
       this.setState({running: !this.state.running})
+    }
+
+    setNewBPM() {
+      if (this.state.bpmField >= 5 && this.state.bpmField <= 180) {
+        this.setState({
+          bpm: this.state.bpmField
+        });
+        return;
+      };
+      this.setState({
+        bpmField: this.state.bpm
+      });
     }
 
     searchName(key) {
@@ -77,12 +83,12 @@ class HashLogic extends Component {
         <Form>
             <Form.Group style={{textAlign: "left"}}>
               <Form.Label style={{fontWeight: 500}}>Set BPM</Form.Label>
-              <Form.Control onChange={this.change} name="bpm" value={this.state.bpm} min="30" max="180" type="number" placeholder="BPM" />
+              <Form.Control onChange={this.change} name="bpmField" value={this.state.bpmField} min="30" max="180" type="number" placeholder="BPM" />
             </Form.Group>
             <Button 
               bsPrefix={`${classes.customButton} btn`} 
               disabled={false} 
-              onClick={(e) => {e.preventDefault(); console.log('clicked');}} 
+              onClick={(e) => {e.preventDefault(); this.setNewBPM();}} 
               type='submit' 
               variant="success">
               Update BPM
@@ -90,6 +96,7 @@ class HashLogic extends Component {
           </Form>
             <Button 
               bsPrefix={`${classes.customButton} btn`} 
+              style={{marginTop: '10px'}}
               disabled={false} 
               onClick={(e) => { e.preventDefault(); this.toggleRunning();}} 
               type='submit' 
@@ -102,4 +109,4 @@ class HashLogic extends Component {
     }
   }
   
-  export default HashLogic;
+  export default NumberNoteInScale;

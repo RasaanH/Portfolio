@@ -9,16 +9,14 @@ export const NoteInScaleWindow = ({notes, milliseconds, running}) => {
     const availableNumbers = [1,2,3,4,5,6,7];
 
     useEffect(() => {
+        clearInterval(intervalIdRef.current);
         if (running === true) {
             const intervalId = startExercise();
             console.log({intervalId});
             intervalIdRef.current = intervalId;
             return;
         };
-        if (running === false) {
-            clearInterval(intervalIdRef.current);
-        }
-    }, [running]);
+    }, [running, milliseconds]);
 
     const startExercise = () => 
         setInterval(() => {
@@ -38,7 +36,7 @@ export const NoteInScaleWindow = ({notes, milliseconds, running}) => {
     return (
         <div className={classes.wrapper}>
             <div style={{marginRight: '10px'}}>
-                <span style={{fontSize: '120px'}}>{scale}</span>
+                <span style={{fontSize: '120px', marginRight: '3px'}}>{scale}</span>
                 <span style={{fontSize: '45px'}}>{form}</span>
             </div>
             <div style={{fontSize: '120px'}}>
