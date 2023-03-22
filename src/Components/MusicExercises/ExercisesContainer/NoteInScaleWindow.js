@@ -18,7 +18,6 @@ export const NoteInScaleWindow = ({notes, milliseconds, running}) => {
         clearInterval(intervalIdRef.current);
         if (running === true) {
             const intervalId = startExercise();
-            console.log({intervalId});
             intervalIdRef.current = intervalId;
             return;
         };
@@ -30,7 +29,6 @@ export const NoteInScaleWindow = ({notes, milliseconds, running}) => {
         } else{
             otherBeats.play();
         }
-        console.log('oldBeat', beatRef.current)
         if (beatRef.current === 4) {
             beatRef.current = 1;
             return;
