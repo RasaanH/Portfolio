@@ -4,11 +4,10 @@ import { pickAtRandomFromArray } from "../../../Utils/pickAtRandomFromArray";
 import metronomeBeat from '../../../audio/metronome-85688.mp3';
 import drumBeat from '../../../audio/drumsticks-pro-mark-la-special-2bn-hickory-no4-103712.mp3'
 
-export const NoteInScaleWindow = ({notes, milliseconds, running}) => {
+export const NoteInScaleWindow = ({notes, numbers, milliseconds, running, lockedNumber, lockedScale}) => {
     const [{ scale, form }, setCurrentScale] = useState({scale: 'C', form: 'Maj'});
     const [currentNote, setCurrentNote] = useState(1);
     const intervalIdRef = useRef();
-    const availableNumbers = [1,2,3,4,5,6,7];
     const oneBeat = new Audio(metronomeBeat);
     const otherBeats = new Audio(drumBeat);
 
@@ -21,7 +20,7 @@ export const NoteInScaleWindow = ({notes, milliseconds, running}) => {
             intervalIdRef.current = intervalId;
             return;
         };
-    }, [running, milliseconds]);
+    }, [running, milliseconds, lockedNumber]);
 
     const updateBeat = () => {
         if (beatRef.current === 1) {
@@ -47,7 +46,8 @@ export const NoteInScaleWindow = ({notes, milliseconds, running}) => {
 
     const updateCurrentScale = () => {
         const nextScale = pickAtRandomFromArray(notes);
-        const nextNumber = pickAtRandomFromArray(availableNumbers);
+        const randomNumber = pickAtRandomFromArray(numbers);
+        const nextNumber = lockedNumber > 0 ? lockedNumber : randomNumber;
         const nextForm = Math.random() > 0.5 ? 'Min' : 'Maj'
         setCurrentScale({scale: nextScale, form: nextForm});
         setCurrentNote(nextNumber);
