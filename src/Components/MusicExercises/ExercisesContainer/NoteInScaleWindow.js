@@ -20,7 +20,7 @@ export const NoteInScaleWindow = ({notes, numbers, milliseconds, running, locked
             intervalIdRef.current = intervalId;
             return;
         };
-    }, [running, milliseconds, lockedNumber]);
+    }, [running, milliseconds, lockedNumber, lockedScale]);
 
     const updateBeat = () => {
         if (beatRef.current === 1) {
@@ -45,7 +45,8 @@ export const NoteInScaleWindow = ({notes, numbers, milliseconds, running, locked
     
 
     const updateCurrentScale = () => {
-        const nextScale = pickAtRandomFromArray(notes);
+        const randomScale = pickAtRandomFromArray(notes);
+        const nextScale = lockedScale !== 'none' ? lockedScale : randomScale;
         const randomNumber = pickAtRandomFromArray(numbers);
         const nextNumber = lockedNumber > 0 ? lockedNumber : randomNumber;
         const nextForm = Math.random() > 0.5 ? 'Min' : 'Maj'

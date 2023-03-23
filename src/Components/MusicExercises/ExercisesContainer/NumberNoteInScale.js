@@ -12,7 +12,7 @@ class NumberNoteInScale extends Component {
         bpm: 25,
         running: false,
         lockedNumber: 0,
-        lockedScale: null
+        lockedScale: "none"
       }
       this.scales = ['A','Ab', 'B', 'Bb', 'C', 'C#', 'D', 'E', 'Eb', 'F', 'F#', 'G'];
       this.numbers = [1,2,3,4,5,6,7];
@@ -84,6 +84,7 @@ class NumberNoteInScale extends Component {
                 running={this.state.running} 
                 numbers={this.numbers} 
                 lockedNumber={this.state.lockedNumber}
+                lockedScale={this.state.lockedScale}
               />
             </div>
           </div>
@@ -102,6 +103,22 @@ class NumberNoteInScale extends Component {
                 <option value={5}>5</option>
                 <option value={6}>6</option>
                 <option value={7}>7</option>
+              </Form.Control> 
+              <Form.Label style={{fontWeight: 500}}>Lock Scale</Form.Label>
+              <Form.Control as="select" onChange={this.change} name="lockedScale" value={this.state.lockedScale} type="select">
+                <option value={"none"}>None</option>
+                <option value={"C"}>C</option>
+                <option value={"C#"}>C#</option>
+                <option value={"D"}>D</option>
+                <option value={"Eb"}>Eb</option>
+                <option value={"E"}>E</option>
+                <option value={"F"}>F</option>
+                <option value={"F#"}>F#</option>
+                <option value={"G"}>G</option>
+                <option value={"Ab"}>Ab</option>
+                <option value={"A"}>A</option>
+                <option value={"Bb"}>Bb</option>
+                <option value={"B"}>B</option>
               </Form.Control> 
             </Form.Group>
             {/* <Form.Group style={{textAlign: "left"}}> */}
