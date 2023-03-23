@@ -17,7 +17,6 @@ class NumberNoteInScale extends Component {
       this.scales = ['A','Ab', 'B', 'Bb', 'C', 'C#', 'D', 'E', 'Eb', 'F', 'F#', 'G'];
       this.numbers = [1,2,3,4,5,6,7];
       this.change = this.change.bind(this); //Fixes context of 'this'
-      this.searchName = this.searchName.bind(this);
     }
 
     change(event) {
@@ -25,40 +24,15 @@ class NumberNoteInScale extends Component {
       if (value.length > 42) {
         return;
       }
+      if (name === 'bpmField') {
+        const newBpm = value < 5 ? 5: value > 180 ? 180 : value;
+        this.setState({bpm: newBpm});
+      }
         this.setState({[name]: value});
     }
 
     toggleRunning() {
       this.setState({running: !this.state.running})
-    }
-
-    setNewBPM() {
-      if (this.state.bpmField >= 5 && this.state.bpmField <= 180) {
-        this.setState({
-          bpm: this.state.bpmField
-        });
-        return;
-      };
-      this.setState({
-        bpmField: this.state.bpm
-      });
-    }
-
-    searchName(key) {
-      //console.log("key", key);
-      let favFood = this.retrieveItem(key);
-      this.setState({
-        searchResult: favFood,
-        nameSearch: ""
-      })
-    }
-
-    addName(key, value) {
-      this.addItem(key, value);
-      this.setState({
-        nameAdd: "",
-        favoriteFoodAdd: ""
-      })
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -121,28 +95,12 @@ class NumberNoteInScale extends Component {
                 <option value={"B"}>B</option>
               </Form.Control> 
             </Form.Group>
-            {/* <Form.Group style={{textAlign: "left"}}> */}
-              {/* <Form.Select onChange={this.change} name="lockedNumber" value={this.state.lockedNumber} type="select">
-                <option value={0}>none</option>
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-              </Form.Select> */}
-            {/* </Form.Group> */}
-            <Button 
-              bsPrefix={`${classes.customButton} btn`} 
-              disabled={false} 
-              onClick={(e) => {e.preventDefault(); this.setNewBPM();}} 
-              type='submit' 
-              variant="success">
-              Update BPM
-            </Button>
           </Form>
             <Button 
               bsPrefix={`${classes.customButton} btn`} 
               style={{marginTop: '10px'}}
               disabled={false} 
-              onClick={(e) => { e.preventDefault(); this.toggleRunning(); this.setNewBPM()}} 
+              onClick={(e) => { e.preventDefault(); this.toggleRunning();}} 
               type='submit' 
               variant="success">
               {!this.state.running ? 'Start' : 'Stop'}
