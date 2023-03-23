@@ -12,7 +12,8 @@ class NumberNoteInScale extends Component {
         bpm: 25,
         running: false,
         lockedNumber: 0,
-        lockedScale: "none"
+        lockedScale: "none",
+        lockedRoot: "none"
       }
       this.scales = ['A','Ab', 'B', 'Bb', 'C', 'C#', 'D', 'E', 'Eb', 'F', 'F#', 'G'];
       this.numbers = [1,2,3,4,5,6,7];
@@ -59,6 +60,7 @@ class NumberNoteInScale extends Component {
                 numbers={this.numbers} 
                 lockedNumber={this.state.lockedNumber}
                 lockedScale={this.state.lockedScale}
+                lockedRoot={this.state.lockedRoot}
               />
             </div>
           </div>
@@ -78,8 +80,8 @@ class NumberNoteInScale extends Component {
                 <option value={6}>6</option>
                 <option value={7}>7</option>
               </Form.Control> 
-              <Form.Label style={{fontWeight: 500}}>Lock Scale</Form.Label>
-              <Form.Control as="select" onChange={this.change} name="lockedScale" value={this.state.lockedScale} type="select">
+              <Form.Label style={{fontWeight: 500}}>Lock Root</Form.Label>
+              <Form.Control as="select" onChange={this.change} name="lockedRoot" value={this.state.lockedRoot} type="select">
                 <option value={"none"}>None</option>
                 <option value={"C"}>C</option>
                 <option value={"C#"}>C#</option>
@@ -93,6 +95,12 @@ class NumberNoteInScale extends Component {
                 <option value={"A"}>A</option>
                 <option value={"Bb"}>Bb</option>
                 <option value={"B"}>B</option>
+              </Form.Control> 
+              <Form.Label style={{fontWeight: 500}}>Lock Scale</Form.Label>
+              <Form.Control as="select" onChange={this.change} name="lockedScale" value={this.state.lockedScale} type="select">
+                <option value={"none"}>None</option>
+                <option value={"Maj"}>Maj</option>
+                <option value={"Min"}>Min</option>
               </Form.Control> 
             </Form.Group>
           </Form>

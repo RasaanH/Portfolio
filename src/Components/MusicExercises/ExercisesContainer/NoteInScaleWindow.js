@@ -4,8 +4,8 @@ import { pickAtRandomFromArray } from "../../../Utils/pickAtRandomFromArray";
 import metronomeBeat from '../../../audio/metronome-85688.mp3';
 import drumBeat from '../../../audio/drumsticks-pro-mark-la-special-2bn-hickory-no4-103712.mp3'
 
-export const NoteInScaleWindow = ({notes, numbers, milliseconds, running, lockedNumber, lockedScale}) => {
-    const [{ scale, form }, setCurrentScale] = useState({scale: 'C', form: 'Maj'});
+export const NoteInScaleWindow = ({notes, numbers, milliseconds, running, lockedNumber, lockedScale, lockedRoot}) => {
+    const [{ root, scale }, setCurrentRoot] = useState({root: 'C', scale: 'Maj'});
     const [currentNote, setCurrentNote] = useState(1);
     const intervalIdRef = useRef();
     const oneBeat = new Audio(metronomeBeat);
@@ -20,7 +20,7 @@ export const NoteInScaleWindow = ({notes, numbers, milliseconds, running, locked
             intervalIdRef.current = intervalId;
             return;
         };
-    }, [running, milliseconds, lockedNumber, lockedScale]);
+    }, [running, milliseconds, lockedNumber, lockedScale, lockedRoot]);
 
     const updateBeat = () => {
         if (beatRef.current === 1) {
@@ -45,20 +45,21 @@ export const NoteInScaleWindow = ({notes, numbers, milliseconds, running, locked
     
 
     const updateCurrentScale = () => {
-        const randomScale = pickAtRandomFromArray(notes);
-        const nextScale = lockedScale !== 'none' ? lockedScale : randomScale;
+        const randomRoot = pickAtRandomFromArray(notes);
+        const nextRoot = lockedRoot !== 'none' ? lockedRoot : randomRoot;
         const randomNumber = pickAtRandomFromArray(numbers);
         const nextNumber = lockedNumber > 0 ? lockedNumber : randomNumber;
-        const nextForm = Math.random() > 0.5 ? 'Min' : 'Maj'
-        setCurrentScale({scale: nextScale, form: nextForm});
+        const randomScale = Math.random() > 0.5 ? 'Min' : 'Maj';
+        const nextScale = lockedScale !== 'none' ? lockedScale : randomScale;
+        setCurrentRoot({root: nextRoot, scale: nextScale});
         setCurrentNote(nextNumber);
     }
     
     return (
         <div className={classes.wrapper}>
             <div style={{marginRight: '10px'}}>
-                <span className={classes.largeFont} style={{marginRight: '3px'}}>{scale}</span>
-                <span className={classes.smallFont}>{form}</span>
+                <span className={classes.largeFont} style={{marginRight: '3px'}}>{root}</span>
+                <span className={classes.smallFont}>{scale}</span>
             </div>
             <div className={classes.largeFont}>
                 {currentNote}
