@@ -1,22 +1,21 @@
-
 .container {
-    max-width: 400px;
-    min-width: 300px;
-    width: 60%;
-    padding: 10px;
-    margin: 10px 0px;
+  max-width: 400px;
+  min-width: 300px;
+  width: 60%;
+  padding: 10px;
+  margin: 10px 0px;
 }
 
 .headerText {
-    font-family: monospace;
-    font-size: 2em;
-    text-align: left;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
+  font-family: monospace;
+  font-size: 2em;
+  text-align: left;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
 }
 
 .bodyText {
-    font-family: monospace;
-    font-size: 1.3em;
-    text-align: left;
+  font-family: monospace;
+  font-size: 1.3em;
+  text-align: left;
 }

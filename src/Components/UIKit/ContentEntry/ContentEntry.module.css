@@ -1,64 +1,64 @@
 .image {
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-    border-style: solid;
-    border-width: 2px;
-    image-rendering: -webkit-optimize-contrast;
-    border-color: white;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-style: solid;
+  border-width: 2px;
+  image-rendering: -webkit-optimize-contrast;
+  border-color: white;
 }
 
 .container {
-    max-width: 400px;
-    min-width: 300px;
-    width: 60%;
-    /*border-style: solid;*/
-    border-radius: 10px;
-    border-width: 1px;
-    padding: 10px;
-    margin: 10px 0px;
-    background-color: whitesmoke;
-    color: #282c34;
-    /*box-shadow: 0 0px 8px 3px forestgreen; // Green theme decided against for now*/
-    box-shadow: 0 0px 2px 1px white;
+  max-width: 400px;
+  min-width: 300px;
+  width: 60%;
+  /*border-style: solid;*/
+  border-radius: 10px;
+  border-width: 1px;
+  padding: 10px;
+  margin: 10px 0px;
+  background-color: whitesmoke;
+  color: #282c34;
+  /*box-shadow: 0 0px 8px 3px forestgreen; // Green theme decided against for now*/
+  box-shadow: 0 0px 2px 1px white;
 }
 
 .containerAlt {
-    max-width: 400px;
-    min-width: 300px;
-    width: 60%;
-    /*border-style: solid;*/
-    border-radius: 10px;
-    border-width: 1px;
-    padding: 10px;
-    margin: 10px 0px;
-    /*box-shadow: 0 0px 8px 3px forestgreen; // Green theme decided against for now*/
-    box-shadow: 0 0px 2px 1px white;
+  max-width: 400px;
+  min-width: 300px;
+  width: 60%;
+  /*border-style: solid;*/
+  border-radius: 10px;
+  border-width: 1px;
+  padding: 10px;
+  margin: 10px 0px;
+  /*box-shadow: 0 0px 8px 3px forestgreen; // Green theme decided against for now*/
+  box-shadow: 0 0px 2px 1px white;
 }
 
 .headerText {
-    font-family: monospace;
-    font-size: 2em;
-    text-align: left;
+  font-family: monospace;
+  font-size: 2em;
+  text-align: left;
 }
 
 .bodyText {
-    font-family: monospace;
-    font-size: 1.2em;
-    text-align: left;
+  font-family: monospace;
+  font-size: 1.2em;
+  text-align: left;
 }
 
 .window {
-    /*background-color: #282c34; //Tranparent window, decided against for now */
-    background-color: limegreen;
-    border-radius: 10px;
-    padding: 5px;
+  /*background-color: #282c34; //Tranparent window, decided against for now */
+  background-color: limegreen;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .windowAlt {
-    /*background-color: #282c34; //Tranparent window, decided against for now */
-    padding: 5px 5px 10px 5px;
-    border-bottom-width: 3px;
-    border-bottom-style: solid;
+  /*background-color: #282c34; //Tranparent window, decided against for now */
+  padding: 5px 5px 10px 5px;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
 }
