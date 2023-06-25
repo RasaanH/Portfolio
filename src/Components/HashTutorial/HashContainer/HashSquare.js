@@ -6,16 +6,12 @@ const HashSquare = (props) => {
     switch (props.fill) {
       case "empty":
         return "transparent";
-        break;
       case "filled":
         return "cyan";
-        break;
       case "multiple":
         return "salmon";
-        break;
       default:
         return "white"; //should never happen
-        break;
     }
   };
   let styleVar = determineStyle();

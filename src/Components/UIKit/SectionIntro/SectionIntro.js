@@ -7,7 +7,7 @@ class ContentEntry extends Component {
   }
 
   /**
-   * [Guide]
+   * TODO: Convert to typescript or use prop types instead of this comment
    * Pass in these required props
    *  1. headerText: Short string to display as the header of the section. - Reminder to keep it short
    *  2. bodyText: String containing the majority of what will be shown on screen.
