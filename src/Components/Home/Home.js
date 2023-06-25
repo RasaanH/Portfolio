@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import classes from "./Home.module.css";
 import ContentEntry from "../UIKit/ContentEntry/ContentEntry";
 import SectionIntro from "../UIKit/SectionIntro/SectionIntro";

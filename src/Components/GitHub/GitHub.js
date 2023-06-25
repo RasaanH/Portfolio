@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import classes from "./GitHub.module.css";
 import SectionIntro from "../UIKit/SectionIntro/SectionIntro";
 
