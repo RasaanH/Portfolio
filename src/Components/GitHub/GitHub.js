@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import classes from "./GitHub.module.css";
 import SectionIntro from "../UIKit/SectionIntro/SectionIntro";
 
-const GitHub = (props) => {
+const GitHub = () => {
   let sectionHeaderText = `Github & Links`;
   let sectionBodyText = `
     Below you'll find various links. I spent most of my time coding on the ResolveTOK account,
