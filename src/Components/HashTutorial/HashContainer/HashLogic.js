@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import HashSquare from "./HashSquare";
 import classes from "./HashLogic.module.css";
 import { Form, Button } from "react-bootstrap";
+import { defaultHashData } from "../../../Constants/defaultHashData";
 
 class HashLogic extends Component {
   constructor(props) {
@@ -56,75 +57,14 @@ class HashLogic extends Component {
   }
 
   async autoDelayEntry() {
-    setTimeout(() => {
-      this.addItem("Jim", "Pizza");
-    }, 250);
-    setTimeout(() => {
-      this.addItem("Adam", "Salad");
-    }, 500);
-    setTimeout(() => {
-      this.addItem("Sarah", "Ice Cream");
-    }, 750);
-    setTimeout(() => {
-      this.addItem("Bob", "Raisin Bran");
-    }, 1000);
-    setTimeout(() => {
-      this.addItem("Bill", "Bananas");
-    }, 1250);
-    setTimeout(() => {
-      this.addItem("Aria", "Apples");
-    }, 1500);
-    setTimeout(() => {
-      this.addItem("Bernie", "Strawberries");
-    }, 1750);
-    setTimeout(() => {
-      this.addItem("Donald", "Oranges");
-    }, 2000);
-    setTimeout(() => {
-      this.addItem("Tim", "Mangos");
-    }, 2250);
-    setTimeout(() => {
-      this.addItem("Tammy", "Lemons");
-    }, 2509);
-    setTimeout(() => {
-      this.addItem("Barry", "Limes");
-    }, 2750);
-    setTimeout(() => {
-      this.addItem("Dan", "Brussel Sprouts");
-    }, 3000);
-    setTimeout(() => {
-      this.addItem("Leo", "Burgers");
-    }, 3250);
-    setTimeout(() => {
-      this.addItem("Carter", "Chilli");
-    }, 3500);
-    setTimeout(() => {
-      this.addItem("Alex", "Chicken");
-    }, 3750);
-    setTimeout(() => {
-      this.addItem("Virgil", "Fish");
-    }, 4000);
-    setTimeout(() => {
-      this.addItem("Lorenzo", "Ranch Dressing");
-    }, 4250);
-    setTimeout(() => {
-      this.addItem("Christina", "Spicy Chicken");
-    }, 4500);
-    setTimeout(() => {
-      this.addItem("Rasaan", "Alfredo Pasta");
-    }, 4750);
-    setTimeout(() => {
-      this.addItem("Lisa", "Chinese Food");
-    }, 5000);
-    setTimeout(() => {
-      this.addItem("Chris", "Oatmeal");
-    }, 5250);
-    setTimeout(() => {
-      this.addItem("Daniel", "Brocolli");
-    }, 5500);
-    setTimeout(() => {
-      this.addItem("Fred", "Tacos");
-    }, 5750);
+    const intervalMs = 250;
+    defaultHashData.forEach(({ name, food }, index) => {
+      const totalTimeout = (index + 1) * intervalMs;
+      console.log({ index, totalTimeout });
+      setTimeout(() => {
+        this.addItem(name, food);
+      }, totalTimeout);
+    });
   }
 
   retrieveItem(key) {
