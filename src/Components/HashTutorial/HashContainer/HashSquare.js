@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import classes from "./HashSquare.module.css";
 
 const HashSquare = (props) => {
@@ -6,16 +6,12 @@ const HashSquare = (props) => {
     switch (props.fill) {
       case "empty":
         return "transparent";
-        break;
       case "filled":
         return "cyan";
-        break;
       case "multiple":
         return "salmon";
-        break;
       default:
         return "white"; //should never happen
-        break;
     }
   };
   let styleVar = determineStyle();

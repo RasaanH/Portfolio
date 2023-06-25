@@ -7,7 +7,7 @@ class ContentEntry extends Component {
   }
 
   /**
-   * [Guide]
+   * TODO: Convert to typescript or use prop types instead of this comment
    * Pass in these required props
    *  1. headerText: Short string to display as the header of the panel
    *  2. image: String URL to image to render

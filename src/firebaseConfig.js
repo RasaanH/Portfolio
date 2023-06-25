@@ -1,13 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 
-/**
- * Client Firebase key here,
- * Best practice would be to set up authentication security rules in the back-end
- * but this is a free project for personal use and doesn't have payment set up anyway so the only risk is someone hits
- * daily free read or write limit if they wanted to be mischievous. Could set up environment variables and gitignore it but for this
- * it shouldn't be a big deal.
- */
+// Not secret
 
 const config = {
   apiKey: "AIzaSyCuEx05to4x-JrIZXu2YK4GMaNTiKAmORc",

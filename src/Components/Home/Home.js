@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import classes from "./Home.module.css";
 import ContentEntry from "../UIKit/ContentEntry/ContentEntry";
 import SectionIntro from "../UIKit/SectionIntro/SectionIntro";
 
 const Home = (props) => {
-  //console.log("props.content", props.content);
   let sectionHeaderText = `Welcome!`;
   let sectionBodyText = `
     Hi, thanks for taking the time to check out my portfolio! I built it from scratch with React.JS and Google's Firestore. This section

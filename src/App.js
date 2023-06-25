@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { Component } from "react";
 import HashTutorial from "../src/Components/HashTutorial/HashTutorial";
@@ -21,11 +20,6 @@ class App extends Component {
     this.db = firebase.firestore();
   }
 
-  /**
-   * Potential ToDos:
-   *  - Consider adding external github link in navbar
-   */
-
   componentDidMount() {
     this.getContentHome();
     this.getContentResolvve();
@@ -41,7 +35,7 @@ class App extends Component {
         let localContent = [...this.state.contentArrHome];
         if (snaps.empty) {
           return;
-        } //guard clause
+        }
         snaps.forEach((doc) => {
           let data = doc.data();
           data = { ...data, id: doc.id };
@@ -63,7 +57,7 @@ class App extends Component {
         let localContent = [...this.state.contentArrResolvve];
         if (snaps.empty) {
           return;
-        } //guard clause
+        }
         snaps.forEach((doc) => {
           let data = doc.data();
           data = { ...data, id: doc.id };
@@ -85,7 +79,7 @@ class App extends Component {
         let localContent = [...this.state.contentArrHash];
         if (snaps.empty) {
           return;
-        } //guard clause
+        }
         snaps.forEach((doc) => {
           let data = doc.data();
           data = { ...data, id: doc.id };
